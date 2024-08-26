@@ -10,7 +10,7 @@ import { Loader } from "lucide-react";
 
 const AllTask = () => {
     const userId = localStorage.getItem('userId');
-    const { setTask, task, setTasks ,tasks} = useTask();
+    const { setTask, task, setTasks, tasks } = useTask();
 
     const { data, isLoading } = useQuery({
         queryKey: ["fetch-Todos"],
@@ -35,14 +35,14 @@ const AllTask = () => {
 
     return (
         <div className="w-[30%] p-2 h-full border-r border-gray-400">
-            <div className="w-full flex justify-between p-3 items-center">
+            <div className="w-full flex   justify-between p-3 items-center">
                 <h2 className="text-2xl font-medium">
                     Tasks
                 </h2>
                 <AddTask />
             </div>
             <Divider />
-            <div className="my-2 gap-2 h-[33.75rem] flex flex-col overflow-hidden overflow-y-scroll">
+            <div className="my-2 gap-2 h-[33.75rem] flex flex-col overflow-hidden overflow-y-scroll no-scrollbar">
                 {isLoading ? (
                     <div className="flex justify-center items-center h-full">
                         <Loader className="animate-spin" size={32} />
@@ -55,8 +55,8 @@ const AllTask = () => {
                             background={task?.id === todo.id ? 'gray.300' : 'white'}
                             className="cursor-pointer transition-all"
                         >
-                            <CardHeader className="text-2xl font-bold p-2">{todo.title}</CardHeader>
-                            <CardFooter>{todo.description}</CardFooter>
+                            <CardHeader padding={"0.3rem"} className="text-2xl font-bold  overflow-hidden line-clamp-1">{todo.title}</CardHeader>
+                            <p className=" px-2 my-2 break-words line-clamp-1">{todo.description}</p>
                         </Card>
                     ))
                 ) : (

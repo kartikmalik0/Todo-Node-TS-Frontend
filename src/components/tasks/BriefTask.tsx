@@ -15,7 +15,7 @@ const BriefTask = () => {
     const toast = useToast()
     return (
         <div className="w-full p-2">
-            <div className="flex gap-2 justify-end border-b border-gray-400 h-16 ">
+            <div className="flex gap-2 justify-end px-2 border-b border-gray-400 h-16 ">
                 <Button colorScheme="red" onClick={async () => {
                     await deleteTodo({ id: task.id, userid: userId || "" })
                     setTasks((prevTasks) => prevTasks.filter((t) => t.id !== task.id));
@@ -34,8 +34,8 @@ const BriefTask = () => {
                 <EditTask />
             </div>
             <div className="p-4 overflow-hidden break-words">
-                <h1 className="text-3xl font-bold underline my-2">{task.title}</h1>
-                <p className="text-gray-500">{task.description}</p>
+                <h1 className="text-3xl font-bold break-words underline my-2">{task.title}</h1>
+                <p className="text-gray-500 break-words">{task.description}</p>
             </div>
         </div>
     )

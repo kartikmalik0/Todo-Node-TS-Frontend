@@ -14,7 +14,7 @@ export default function Home() {
   }
   return (
     <Box w={"100wh"} h={"100dvh"} display={"flex"} justifyContent={"center"} alignItems={"center"}>
-      <Card w={"60%"} h={"80%"}>
+      <Card className="sm:w-full md:w-[98%] lg:w-[80%]" h={"80%"}>
         <CardBody>
           <Box padding={"2rem"} className=" h-full w-full flex" >
             <TaskProvider>
